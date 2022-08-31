@@ -6,10 +6,10 @@ public abstract class Product implements Comparable<Product> {
     private double price;
 
     // Constr.
-    public Product(String brand, String color, double price){
-        this.brand = brand;
-        this.color = color;
+    public Product(double price, String color, String brand){
         this.price = price;
+        this.color = color;
+        this.brand = brand;
     }
     // Copy Constr.
     public Product(Product source){
@@ -41,8 +41,14 @@ public abstract class Product implements Comparable<Product> {
     // Comparable override
     @Override
     public int compareTo(Product specifiedObject) {
-        // TODO Auto-generated method stub
-        return (int)Math.round(this.getPrice() - specifiedObject.getPrice());
+        // String className = this.getClass().getSimpleName();
+        // String sClassName = specifiedObject.getClass().getSimpleName();
+        // if (!(className.equals(sClassName))) {
+        //     return className.compareTo(sClassName);
+        // }
+        // return className.compareTo(sClassName);
+
+        return Double.compare(this.getPrice(), specifiedObject.getPrice());
     }
 
 }

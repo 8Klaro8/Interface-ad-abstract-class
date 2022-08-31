@@ -6,8 +6,8 @@ public class Pants extends Product implements discountable {
     private int waist;
 
     // Constr.
-    public Pants(int waist, String brand, String color, double price) {
-        super(brand, color, price);
+    public Pants(int waist, double price, String color, String brand) {
+        super(price, color, brand);
         this.waist = waist;
     }
 
@@ -48,10 +48,11 @@ public class Pants extends Product implements discountable {
 
     // toString
     public String toString(){
-        return  "\nWaist: " + this.getWaist() +
-                "\nBrand: " + super.getBrand() +
-                "\nColor: " + super.getColor() +
-                "\nPrice: " + super.getPrice();
+        return  "PANTS" +
+                "\t" + this.getWaist() +
+                "\t" + super.getBrand() +
+                "\t" + super.getColor() +
+                "\t" + super.getPrice();
     }
 
 }

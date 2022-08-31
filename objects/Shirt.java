@@ -7,8 +7,8 @@ public class Shirt extends Product implements discountable{
     private Size size;
 
     // Constr.
-    public Shirt(Size size, String brand, String color, double price) {
-        super(brand, color, price);
+    public Shirt(Size size, double price, String color, String brand) {
+        super(price, color, brand);
         this.size = size;
     }
     // Copy Constr.
@@ -33,10 +33,11 @@ public class Shirt extends Product implements discountable{
 
     // toString
     public String toString(){
-        return  "\nSize: " + this.getSize() +
-                "\nBrand: " + super.getBrand() +
-                "\nColor: " + super.getColor() +
-                "\nPrice: " + super.getPrice();
+        return  "SHIRT:" +
+                "\t" + this.getSize() +
+                "\t" + super.getBrand() +
+                "\t" + super.getColor() +
+                "\t" + super.getPrice();
     }
 
 }
